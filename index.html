@@ -48,7 +48,7 @@
             //}
         //}).addTo(map);
 
-        var geojsonLineas = new L.GeoJSON.AJAX('./shapes/',{
+        var geojsonLineas = new L.GeoJSON.AJAX('/shapes/',{
             style: function (feature) {
                 return {
                     color: "#" + (feature.properties.route_color || "FF0000"),
@@ -112,4 +112,5 @@
     </script>
 </body>
 </html>
+
 
