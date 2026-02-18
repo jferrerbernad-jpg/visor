@@ -79,10 +79,12 @@ html, body {
                     "<br>Shape: " + feature.properties.shape_id
             }
         });
-        
+
+        /*
         geojsonLineas.on('data:loaded', function () {
             map.fitBounds(geojsonLineas.getBounds());
         });
+        */
 
         geojsonLineas.addTo(map);
 
@@ -129,6 +131,7 @@ html, body {
     </script>
 </body>
 </html>
+
 
 
 
