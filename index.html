@@ -49,6 +49,23 @@ html, body {
         
         }).addTo(map);
 
+       gl.on('load', () => {
+      map.on('zoomend', () => {
+        const z = map.getZoom();
+        const visibility = (z <= 13) ? 'visible' : 'none';
+        if (gl.getMap().getLayer('Other border dash')) {
+          gl.getMap().setLayoutProperty('Other border dash', 'visibility', visibility);
+        }
+      });
+
+      //Ejecutarlo una vez al inicio
+      const z0 = map.getZoom();
+      const visibility0 = (z0 <= 13) ? 'visible' : 'none';
+      if (gl.getMap().getLayer('Other border dash')) {
+        gl.getMap().setLayoutProperty('Other border dash', 'visibility', visibility0);
+      }
+    }); 
+
         //var geojsonParadas = new L.GeoJSON.AJAX('/stops/',{
             //pointToLayer: function (feature, latlng) {                    
                 //return new L.CircleMarker(latlng, {
@@ -132,6 +149,7 @@ html, body {
     </script>
 </body>
 </html>
+
 
 
 
